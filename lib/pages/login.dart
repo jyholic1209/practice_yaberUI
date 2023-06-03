@@ -35,6 +35,7 @@ class Login extends StatelessWidget {
               const SizedBox(height: 8),
               TextField(
                 controller: passwordController,
+                obscureText: true,
                 decoration: const InputDecoration(
                   labelText: 'Please enter your password',
                   border: OutlineInputBorder(
@@ -44,7 +45,7 @@ class Login extends StatelessWidget {
               const SizedBox(height: 8),
               ElevatedButton(
                 onPressed: () {
-                  Get.to(Home());
+                  Get.to(const Home());
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(800, 40),
@@ -60,7 +61,7 @@ class Login extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {
-                  Get.to(SignupPage());
+                  Get.to(const SignupPage());
                 },
                 child: const Text('회원가입'),
               ),

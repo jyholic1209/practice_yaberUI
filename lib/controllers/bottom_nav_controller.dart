@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -6,22 +8,22 @@ import 'package:get/get.dart';
 
 import '../pages/home/upload_page.dart';
 
-enum pageName { HOME, SEARCH, UPLOAD, BOOKMARK, MYPAGE }
+enum PageName { HOME, SEARCH, UPLOAD, BOOKMARK, MYPAGE }
 
 class BottomNavController extends GetxController {
   RxInt pageIndex = 0.obs;
   List<int> pageHistory = [0];
 
   void changeBottomNav(int value, {bool hasGesture = true}) {
-    var page = pageName.values[value];
+    var page = PageName.values[value];
     switch (page) {
-      case pageName.HOME:
-      case pageName.SEARCH:
-      case pageName.BOOKMARK:
-      case pageName.MYPAGE:
+      case PageName.HOME:
+      case PageName.SEARCH:
+      case PageName.BOOKMARK:
+      case PageName.MYPAGE:
         _changePage(value, hasGesture: hasGesture);
         break;
-      case pageName.UPLOAD:
+      case PageName.UPLOAD:
         Get.to(const UploadPage());
         break;
     }
@@ -53,11 +55,11 @@ class BottomNavController extends GetxController {
         builder: (context) => MessageBox(
           title: '시스템',
           message: '앱을 종료하시겠습니까?',
-          buttomText1: '종료',
+          buttonText1: '종료',
           okCallback: () {
             exit(0);
           },
-          buttomText2: '취소',
+          buttonText2: '취소',
           cancelCallback: Get.back,
         ),
       );

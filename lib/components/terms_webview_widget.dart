@@ -1,19 +1,16 @@
-import 'dart:async';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class TermsWebviewWidget extends StatelessWidget {
-  String title;
-  String url;
-  TermsWebviewWidget({super.key, required this.title, required this.url});
+  final String title;
+  final String url;
+  const TermsWebviewWidget({super.key, required this.title, required this.url});
 
-  WebViewController? _webViewController;
+  // WebViewController? _webViewController;
 
   @override
   Widget build(BuildContext context) {
-    _webViewController = WebViewController()
+    WebViewController? webViewController = WebViewController()
       ..loadRequest(Uri.parse(url))
       ..setJavaScriptMode(JavaScriptMode.unrestricted);
     return Scaffold(
@@ -21,7 +18,7 @@ class TermsWebviewWidget extends StatelessWidget {
         title: Text(title),
         centerTitle: true,
       ),
-      body: WebViewWidget(controller: _webViewController!),
+      body: WebViewWidget(controller: webViewController),
     );
   }
 }

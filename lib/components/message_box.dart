@@ -4,17 +4,17 @@ import 'package:get/get.dart';
 class MessageBox extends StatelessWidget {
   final String? title;
   final String message;
-  final String buttomText1;
-  final String? buttomText2;
+  final String buttonText1;
+  final String? buttonText2;
   final Function()? okCallback;
   final Function()? cancelCallback;
-  MessageBox({
+  const MessageBox({
     super.key,
-    this.title,
+    required this.title,
     required this.message,
-    required this.buttomText1,
+    required this.buttonText1,
     required this.okCallback,
-    this.buttomText2,
+    this.buttonText2,
     this.cancelCallback,
   });
 
@@ -60,16 +60,16 @@ class MessageBox extends StatelessWidget {
                   children: [
                     ElevatedButton(
                       onPressed: okCallback,
-                      child: Text(buttomText1),
+                      child: Text(buttonText1),
                     ),
-                    if (buttomText2 != null) const SizedBox(width: 10),
-                    if (buttomText2 != null)
+                    if (buttonText2 != null) const SizedBox(width: 10),
+                    if (buttonText2 != null)
                       ElevatedButton(
                         onPressed: cancelCallback,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.grey,
                         ),
-                        child: Text(buttomText2!),
+                        child: Text(buttonText2!),
                       ),
                   ],
                 )

@@ -4,15 +4,15 @@ import 'package:flutter_yaber/controllers/signup_controller.dart';
 import 'package:get/get.dart';
 import 'package:flutter_yaber/pages/signup/signup_page.dart';
 
-class InfoAggree extends StatelessWidget {
-  const InfoAggree({super.key});
+class InfoAgree extends StatelessWidget {
+  const InfoAgree({super.key});
 
   Widget _myAvatar() {
     return Stack(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 15),
-          child: AavatarWidget(
+        const Padding(
+          padding: EdgeInsets.only(left: 15),
+          child: AvatarWidget(
             thumbPath:
                 'https://img.hankyung.com/photo/202304/p1065571917157860_467_thum.jpg',
             size: 100,
@@ -59,18 +59,18 @@ class InfoAggree extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _tableRowWidget('아이디*'),
-          _tableRowWidget('이메일*'),
-          _tableRowWidget('비밀번호 *'),
-          _tableRowWidget('비밀번호 재입력*'),
-          _tableRowWidget('국가*'),
+        children: const [
+          TableRowWidget('아이디*'),
+          TableRowWidget('이메일*'),
+          TableRowWidget('비밀번호 *'),
+          TableRowWidget('비밀번호 재입력*'),
+          TableRowWidget('국가*'),
         ],
       ),
     );
   }
 
-  bool _isAggree() {
+  bool _isAgree() {
     var isTermCheck = Get.find<SignupController>().isPrivateCheck.value;
     var isLocCheck = Get.find<SignupController>().isLocationCheck.value;
     if (isTermCheck && isLocCheck) {
@@ -93,7 +93,7 @@ class InfoAggree extends StatelessWidget {
             _infoTable(),
             ElevatedButton(
                 onPressed: () {
-                  if (_isAggree()) {
+                  if (_isAgree()) {
                     Get.find<SignupController>().infoPageCheck(true);
                     tabKey.currentState?.next();
                   } else {
@@ -110,9 +110,9 @@ class InfoAggree extends StatelessWidget {
   }
 }
 
-class _tableRowWidget extends StatelessWidget {
-  String title;
-  _tableRowWidget(
+class TableRowWidget extends StatelessWidget {
+  final String title;
+  const TableRowWidget(
     this.title, {
     super.key,
   });
@@ -168,7 +168,7 @@ class _tableRowWidget extends StatelessWidget {
                 SizedBox(
                   width: isHide ? 150 : 200,
                   height: 35,
-                  child: TextField(
+                  child: const TextField(
                     decoration: InputDecoration(
                         hintText: '항목을 입력해 주세요',
                         contentPadding: EdgeInsets.symmetric(vertical: 2),
@@ -184,8 +184,8 @@ class _tableRowWidget extends StatelessWidget {
                   child: isHide
                       ? ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(0)),
-                          child: Text(
+                              padding: const EdgeInsets.all(0)),
+                          child: const Text(
                             '검색',
                             style: TextStyle(fontSize: 12),
                           ),

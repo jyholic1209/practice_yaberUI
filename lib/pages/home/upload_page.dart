@@ -7,7 +7,7 @@ class UploadPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _imageSize = 100.0;
+    var imageSize = 100.0;
     return Scaffold(
       appBar: AppBar(
         leading: Builder(
@@ -58,25 +58,25 @@ class UploadPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(
-                    width: _imageSize,
-                    height: _imageSize,
+                  SizedBox(
+                    width: imageSize,
+                    height: imageSize,
                     // color: Colors.amberAccent,
                     child: CachedNetworkImage(
                         imageUrl:
                             'https://source.unsplash.com/random/300×300/?people'),
                   ),
-                  Container(
-                    width: _imageSize,
-                    height: _imageSize,
+                  SizedBox(
+                    width: imageSize,
+                    height: imageSize,
                     // color: Colors.blueAccent,
                     child: CachedNetworkImage(
                         imageUrl:
                             'https://source.unsplash.com/random/300×300/?baby'),
                   ),
-                  Container(
-                    width: _imageSize,
-                    height: _imageSize,
+                  SizedBox(
+                    width: imageSize,
+                    height: imageSize,
                     // color: Colors.redAccent,
                     child: CachedNetworkImage(
                         imageUrl:

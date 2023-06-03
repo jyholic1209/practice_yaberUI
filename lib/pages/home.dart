@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_yaber/controllers/bottom_nav_controller.dart';
 import 'package:flutter_yaber/pages/home/alarm_page.dart';
-import 'package:flutter_yaber/pages/home/home_bookmarrk_page.dart';
+import 'package:flutter_yaber/pages/home/home_bookmark_page.dart';
 import 'package:flutter_yaber/pages/home/home_mypage.dart';
 import 'package:flutter_yaber/pages/home/home_search_page.dart';
+import 'package:flutter_yaber/pages/setting/setting_page.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:flutter_yaber/pages/home/home_location_peek_page.dart';
 
 class Home extends GetView<BottomNavController> {
-  Home({super.key});
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +22,14 @@ class Home extends GetView<BottomNavController> {
             index: controller.pageIndex.value,
             children: [
               HomeLocationPeekPage(),
-              HomeSearchPage(),
+              const HomeSearchPage(),
               const Center(
                   child: Text(
                 'Upload',
                 style: TextStyle(fontSize: 40),
               )),
-              HomeBookMarkPage(),
-              HomeMyPage(),
+              const HomeBookMarkPage(),
+              const HomeMyPage(),
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
@@ -86,7 +86,7 @@ PreferredSizeWidget _homeAppbar(int index) {
   List<Widget> getActionIcon(int page) {
     IconButton iconButton1 = IconButton(
         onPressed: () {
-          Get.to(AlarmPage());
+          Get.to(const AlarmPage());
         },
         icon: const Icon(
           Icons.notifications_none,
@@ -94,7 +94,7 @@ PreferredSizeWidget _homeAppbar(int index) {
         ));
     IconButton iconButton2 = IconButton(
         onPressed: () {
-          Get.to(AlarmPage());
+          Get.to(const SettingPage());
         },
         icon: const Icon(
           Icons.settings,

@@ -1,13 +1,13 @@
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_yaber/pages/signup/info_aggree.dart';
+import 'package:flutter_yaber/pages/signup/info_agree.dart';
 import 'package:flutter_yaber/pages/signup/signup_end.dart';
-import 'package:flutter_yaber/pages/signup/terms_aggree.dart';
+import 'package:flutter_yaber/pages/signup/terms_agree.dart';
 
 GlobalKey<ContainedTabBarViewState> tabKey = GlobalKey();
 
 class SignupPage extends StatelessWidget {
-  SignupPage({super.key});
+  const SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +37,9 @@ class SignupPage extends StatelessWidget {
           Text('정보 입력'),
           Text('가입 완료'),
         ],
-        views: [
-          TermsAggree(),
-          InfoAggree(),
+        views: const [
+          TermsAgree(),
+          InfoAgree(),
           SignupEnd(),
         ],
       ),

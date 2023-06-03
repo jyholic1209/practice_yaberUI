@@ -4,8 +4,8 @@ import 'package:flutter_yaber/pages/signup/signup_page.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-class TermsAggree extends StatelessWidget {
-  const TermsAggree({super.key});
+class TermsAgree extends StatelessWidget {
+  const TermsAgree({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +18,9 @@ class TermsAggree extends StatelessWidget {
           children: [
             const Text('서비스 제공과 관련된 약관에 모두 동의합니다.'),
             const SizedBox(height: 30),
-            Terms(term: '개인정보처리방침 동의(필수)', index: 1),
-            Terms(term: '위치기반서비스 이용약관(필수)', index: 2),
-            Terms(term: '마케팅 정보 수신 전체 동의(필수)', index: 3),
+            const Terms(term: '개인정보처리방침 동의(필수)', index: 1),
+            const Terms(term: '위치기반서비스 이용약관(필수)', index: 2),
+            const Terms(term: '마케팅 정보 수신 전체 동의(필수)', index: 3),
             ElevatedButton(
                 onPressed: () => tabKey.currentState?.next(),
                 child: const Text('다 음'))
@@ -32,12 +32,12 @@ class TermsAggree extends StatelessWidget {
 }
 
 class Terms extends GetView<SignupController> {
-  int index = 0;
-  String term;
-  Terms({
+  final int index;
+  final String term;
+  const Terms({
     super.key,
     required this.term,
-    required this.index,
+    this.index = 0,
   });
 
   @override
@@ -69,19 +69,19 @@ class Terms extends GetView<SignupController> {
             onTap: () {
               switch (index) {
                 case 1:
-                  Get.to(TermsWebviewWidget(
+                  Get.to(const TermsWebviewWidget(
                     title: '개인정보처리방침 동의약관',
                     url: 'https://policy.naver.com/policy/service.html',
                   ));
                   break;
                 case 2:
-                  Get.to(TermsWebviewWidget(
+                  Get.to(const TermsWebviewWidget(
                     title: '위치기반서비스 이용약관',
                     url: 'https://policy.naver.com/policy/service.html',
                   ));
                   break;
                 case 3:
-                  Get.to(TermsWebviewWidget(
+                  Get.to(const TermsWebviewWidget(
                     title: '마켓팅 정보 수신 전체 동의약관',
                     url: 'https://policy.naver.com/policy/service.html',
                   ));

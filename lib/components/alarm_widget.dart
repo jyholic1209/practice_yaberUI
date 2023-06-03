@@ -7,13 +7,13 @@ class AlarmWidget extends StatelessWidget {
   final GlobalKey _containerKey = GlobalKey();
   final String message;
   final String imgUrl;
-  Size? containerSize;
+  // Size? containerSize;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       key: _containerKey,
-      padding: EdgeInsets.only(top: 5, left: 10, right: 10),
+      padding: const EdgeInsets.only(top: 5, left: 10, right: 10),
       height: 100,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

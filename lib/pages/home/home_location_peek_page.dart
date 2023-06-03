@@ -6,7 +6,7 @@ import '../../components/post_widget.dart';
 class HomeLocationPeekPage extends StatelessWidget {
   HomeLocationPeekPage({super.key});
 
-  GlobalKey<ContainedTabBarViewState> tabHomeKey = GlobalKey();
+  final GlobalKey<ContainedTabBarViewState> tabHomeKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,8 +42,8 @@ class HomeLocationPeekPage extends StatelessWidget {
           ),
         ],
         views: [
-          HomeLocationDetailPage(),
-          HomePeekDetailPage(),
+          homeLocationDetailPage(),
+          const HomePeekDetailPage(),
         ],
       ),
     );
@@ -69,29 +69,29 @@ class HomePeekDetailPage extends StatelessWidget {
             decoration: InputDecoration(
               hintText: 'input city',
               labelText: 'Paris, France',
-              labelStyle:
-                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              labelStyle: const TextStyle(
+                  color: Colors.black, fontWeight: FontWeight.bold),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(40),
               ),
-              suffixIcon: Icon(Icons.search),
+              suffixIcon: const Icon(Icons.search),
               filled: true,
               fillColor: Colors.grey[400],
             ),
           ),
         ),
-        Expanded(child: HomeLocationDetailPage()),
+        Expanded(child: homeLocationDetailPage()),
         // HomeLocationDetailPage(),
       ],
     );
   }
 }
 
-Widget HomeLocationDetailPage() {
+Widget homeLocationDetailPage() {
   return Padding(
     padding: const EdgeInsets.only(top: 5, left: 10, right: 10),
     child: ListView(
-      children: [...List.generate(10, (index) => PostWidget())],
+      children: [...List.generate(10, (index) => const PostWidget())],
     ),
   );
 }

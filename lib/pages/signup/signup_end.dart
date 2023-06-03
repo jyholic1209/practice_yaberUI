@@ -1,5 +1,4 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_yaber/controllers/signup_controller.dart';
 import 'package:flutter_yaber/pages/login.dart';
 import 'package:flutter_yaber/pages/signup/signup_page.dart';
@@ -20,7 +19,7 @@ class SignupEnd extends StatelessWidget {
       return MessageBox(
         title: 'Yaber',
         message: 'Yaber 회원가입이 완료되었습니다.',
-        buttomText1: '로그인',
+        buttonText1: '로그인',
         okCallback: () {
           Get.offAll(Login());
         },
@@ -29,7 +28,7 @@ class SignupEnd extends StatelessWidget {
       return MessageBox(
         title: 'Yaber',
         message: 'Yaber 회원가입이 정상적이지 못합니다.\n다시 확인해 주세요.',
-        buttomText1: '이전창',
+        buttonText1: '이전창',
         okCallback: () {
           tabKey.currentState?.previous();
         },

@@ -7,8 +7,8 @@ class HomeBookMarkPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 5, left: 10, right: 10),
+    return const Padding(
+      padding: EdgeInsets.only(top: 5, left: 10, right: 10),
       child: PostWidget(isBookmark: true),
     );
   }

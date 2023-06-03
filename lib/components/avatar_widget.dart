@@ -1,15 +1,16 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class AavatarWidget extends StatelessWidget {
-  double? size;
-  String thumbPath;
-  AavatarWidget({
+class AvatarWidget extends StatelessWidget {
+  final double? size;
+  final String thumbPath;
+  const AvatarWidget({
     super.key,
     required this.thumbPath,
     this.size = 70,
   });
 
+  // ignore: non_constant_identifier_names
   Widget AvatarCircularWidget() {
     return Container(
       padding: const EdgeInsets.all(2),
@@ -50,7 +51,7 @@ class AavatarWidget extends StatelessWidget {
             imageUrl: thumbPath,
             progressIndicatorBuilder: (context, url, downloadProgress) =>
                 CircularProgressIndicator(value: downloadProgress.progress),
-            errorWidget: (context, url, error) => Icon(Icons.error),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
             fit: BoxFit.cover,
           ),
         ),
