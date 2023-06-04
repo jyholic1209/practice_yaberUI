@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_yaber/pages/home/reply_page.dart';
+import 'package:get/get.dart';
 
 class PostWidget extends StatelessWidget {
   final bool isBookmark;
@@ -30,7 +32,12 @@ class PostWidget extends StatelessWidget {
           width: 300,
           child: TextButton(
             style: TextButton.styleFrom(padding: const EdgeInsets.all(0)),
-            onPressed: () {},
+            onPressed: () {
+              Get.to(ReplyPage(
+                  imageUrl: imageUrl,
+                  posterNation: 'Seoul, Korea',
+                  postingTime: '2025. 5. 4. 09:28'));
+            },
             child: Text(
               imageUrl,
               style: const TextStyle(color: Colors.blue),

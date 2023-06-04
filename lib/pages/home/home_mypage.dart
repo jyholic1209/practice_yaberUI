@@ -14,13 +14,13 @@ class HomeMyPage extends StatelessWidget {
       child: Column(
         children: [
           Row(
-            children: [
-              const SizedBox(width: 15),
+            children: const [
+              SizedBox(width: 15),
               AvatarWidget(
                   thumbPath:
                       'https://img.hankyung.com/photo/202304/p1065571917157860_467_thum.jpg'),
-              const SizedBox(width: 10),
-              const Text('Ahnpro'),
+              SizedBox(width: 10),
+              Text('Ahnpro'),
             ],
           ),
           const SizedBox(height: 10),
